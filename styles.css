@@ -1,0 +1,32 @@
+﻿.intro {
+    text-align: center;
+    font-family: Arial;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+p {
+    font-size: 14pt;
+}
+
+#image-gallery {
+    width: 600px;
+    margin: 0 auto;
+}
+
+#current-image {
+    width: 100%;
+}
+
+#image-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#image-thumbs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

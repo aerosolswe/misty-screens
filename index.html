@@ -2,18 +2,35 @@
 <html lang="en-us">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Misty screens</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Misty screens</title>
 </head>
 
 <body bgcolor="#2A1C31">
+    <div id="image-container"></div>
 
-  <img src="20231015201747_251446454823500.png" class="img-responsive" alt=""> 
-  </div>
-  <script>
-    
-  </script>
+    <script>
+        var request = new XMLHttpRequest();
+        request.open("GET", "images.json", false);
+        request.send(null)
+        var images = JSON.parse(request.responseText);
+        //const images = [
+        //    '20231015201747_251446454823500.png',
+        //    '20231015201747_251446454823500.png',
+        //    '20231015201747_251446454823500.png'
+        //];
+
+        const container = document.getElementById('image-container');
+
+        for (let i = 0; i < images.length; i++) {
+            const img = document.createElement('img');
+            img.src = images[i].url;
+            img.width = window.innerWidth;
+            container.appendChild(img);
+        }
+    </script>
 </body>
 
 </html>
